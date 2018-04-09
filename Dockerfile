@@ -3,7 +3,7 @@ MAINTAINER “Dan Walsh” <dwalsh@redhat.com>
 ENV container docker
 RUN yum -y update; yum clean all
 RUN yum -y install systemd; yum clean all;
-RUN yum install -y java-1.7.0-openjdk which unzip openssh-server sudo openssh-clients && yum clean all
+RUN yum install -y java-1.8.0-openjdk which unzip openssh-server sudo openssh-clients && yum clean all
 # enable no pass and speed up authentication
 RUN sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/;s/#UseDNS yes/UseDNS no/' /etc/ssh/sshd_config
 
